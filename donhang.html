@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Đơn Hàng</title>
+	<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="./images/favicon.ico" >
+    <link rel="stylesheet" href="./rule.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+
+    <style>
+        article h1{
+			margin: 12px 0 16px 0;
+			text-transform: uppercase;
+			font-size: 28px;
+			color: #F90B6D;
+			text-align: center;
+			font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			font-weight: 300;
+			line-height: 34px;
+		}
+
+		article h1::after{
+			content: '';
+			position:relative;
+			display: block;
+			left: 40%;
+			margin: 12px 0 16px 0;
+			width: 200px;
+			height: 3px;
+			transform: skewX(-12deg), translateX(50%);
+			background: radial-gradient(#cddc39, #fff);
+		}
+
+        article{
+            grid-area:inherit;
+        }
+        
+        table{
+            width: 100%;
+        }
+
+    		.icon{
+			float: none;
+			margin-left: 100px;
+		}
+
+		.giohang{
+			margin-top: 19px;
+			float: right;
+
+		}
+
+		tfoot{
+			text-align: right;
+		}
+	</style>
+</head>
+<body id="body">
+	<div class="div_header">
+		<header>
+			<div id="header">
+				<a class="logo_header" href=""><img id="logo" src="./images/logo.png" alt=""></a>
+				<div class="img_animation">
+					<img class="img1" src="./header-img1.png" alt="">
+					<img class="img2" src="./header-img2.png" alt="">
+					<img class="img3" src="./header-img3.png" alt="">
+				</div>
+				
+				<div >
+					<div class="sub">
+						<nav class="nav-grid">
+							<a href="trangchu.html">Trang chủ</a>
+							<a href="gioithieu.html">Giới thiệu</a>
+							<a href="sanpham.html">Sản phẩm</a>
+							<a href="tintuc.html">Tin tức</a>
+							<a href="dangnhap.html">Đăng nhập</a>
+							<a href="dangky.html">Đăng ký</a>
+							<a href="lienhe.html">Liên hệ</a>
+						</nav>
+					</div>
+
+					<form action="timkiem.html" method="get" class="icon" id="frm-search" onsubmit="return search(this);">
+						<input name="words" type="text" id="input-search" placeholder="Nhập nội dung cần tìm">
+						<button type="submit"><a href="#" id="icon-search"></a><i class=" icon_search fa fa-search"></i></button>
+					</form>
+					<button class="giohang" onclick="return window.location.href='donhang.html'"><i class="icon_shopping_cart fa fa-shopping-cart"></i></button>
+				</div>
+			</div>
+		</header>
+	</div>
+	<main >
+		<article>
+			<div><h1>CHI TIẾT ĐƠN HÀNG</h1></div>
+            <table border="1px" id="cartDetail">
+                <thead>
+                    <th>Hinh SP</th>
+                    <th>Tên SP</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thành tiền</th>
+                    <th></th>
+                </thead>
+                <tbody>
+
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="6" class="table-text-right">
+                      Tổng thành tiền (A) = <span id="money-item" >0 </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" class="table-text-right">
+                      Chiết khấu (B) = 0.1 x A = <span id="money-ck">0</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" class="table-text-right">
+                      Thuế (C) = 10% x (A-B) = <span id="money-tax">0</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" class="table-text-right">
+                      Tổng đơn hàng = A -B + C = <span id="bill">0</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" style="text-align: center">
+                      <input type="submit" value="Xác nhận đơn hàng" />
+                    </td>
+                  </tr>
+                
+                </tfoot>
+            </table>
+		</article>
+	</main>
+	<div class="footer">
+		<footer>
+			<div class="copy_right">
+				<p>&copy 2021 Bản quyền thuộc về FreeezeVN. </p>
+				<a href=""> <i class="fa fa-facebook icon_footer"></i></a>
+				<a href=""> <i class="fa fa-twitter icon_footer"></i></a>
+				<a href=""> <i class="fa fa-pinterest icon_footer"></i></a>
+				<a href="#logo" class="back_top">
+					<img src="./top.png" alt="">
+				</a>
+			</div>
+			
+		</footer>
+		
+	</div>
+    <script src="./js/bt.js">
+
+	</script>
+</body>
+</html>

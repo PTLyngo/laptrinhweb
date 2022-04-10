@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Liên Hệ</title>
+	<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="./images/favicon.ico" >
+    <link rel="stylesheet" href="./rule.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+
+    <style>
+        article h1{
+			margin: 12px 0 16px 0;
+			text-transform: uppercase;
+			font-size: 28px;
+			color: #F90B6D;
+			text-align: center;
+			font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			font-weight: 300;
+			line-height: 34px;
+		}
+
+		article h1::after{
+			content: '';
+			position:relative;
+			display: block;
+			left: 40%;
+			margin: 12px 0 16px 0;
+			width: 200px;
+			height: 3px;
+			transform: skewX(-12deg), translateX(50%);
+			background: radial-gradient(#cddc39, #fff);
+		}
+
+        .address{
+            display: flex;
+        }
+
+        .img_address{
+            margin-top: 10px;
+            background-color: #cddc39;
+            width: 40px;
+            display: flex;
+            height: 30px;
+            
+            
+        }
+
+        .img_address img{
+            width: 10px;
+            height: 20px;
+            margin: auto;
+        }
+
+        .form{
+            display: flex;
+            justify-content: center;
+        }
+
+        .icon_lh{
+            width: 75%;
+            padding:5px;
+            background-color:#cddc39;
+            color: white;
+            text-align: center;
+        }
+
+        .submit{
+            font-size: 100%;
+            
+        }
+
+        
+        .icon{
+			float: none;
+			margin-left: 100px;
+		}
+
+		.giohang{
+			margin-top: 19px;
+			float: right;
+
+		}
+	</style>
+</head>
+<body id="body">
+	<div class="div_header">
+		<header>
+			<div id="header">
+				<a class="logo_header" href=""><img id="logo" src="./images/logo.png" alt=""></a>
+				<div class="img_animation">
+					<img class="img1" src="./header-img1.png" alt="">
+					<img class="img2" src="./header-img2.png" alt="">
+					<img class="img3" src="./header-img3.png" alt="">
+				</div>
+				
+				<div >
+					<div class="sub">
+						<nav class="nav-grid">
+							<a href="trangchu.html">Trang chủ</a>
+							<a href="gioithieu.html">Giới thiệu</a>
+							<a href="sanpham.html">Sản phẩm</a>
+							<a href="tintuc.html">Tin tức</a>
+							<a href="dangnhap.html">Đăng nhập</a>
+							<a href="dangky.html">Đăng ký</a>
+							<a href="lienhe.html">Liên hệ</a>
+						</nav>
+					</div>
+
+					<form action="timkiem.html" method="get" class="icon" id="frm-search" onsubmit="return search(this);">
+						<input name="words" type="text" id="input-search" placeholder="Nhập nội dung cần tìm">
+						<button type="submit"><a href="#" id="icon-search"></a><i class=" icon_search fa fa-search"></i></button>
+					</form>
+					<button class="giohang" onclick="return window.location.href='donhang.html'"><i class="icon_shopping_cart fa fa-shopping-cart"></i></button>
+</form>
+				</div>
+			</div>
+		</header>
+	</div>
+	<main class="">
+		<article>
+			<h1>Liên hệ</h1>
+            <div class="address" >
+                <div class="img_address">
+                    <img src="./images/lienhe/check-in.png" alt="">
+                </div>
+                <p > <b> Địa chỉ: 0123, Tòa Nhà ABC, TP. Cần Thơ</b> Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu bên dưới. Xin cám ơn.</p>
+            </div>
+            <h1>Góp ý</h1>
+            <div class="form">
+                <form id="formLH" onsubmit="return validateLH(this);" action="" method="post" enctype="application/x-www-form-urlencoded" >
+                    <table>
+                        <tr>
+                            <td><label for="name"><i class="icon_lh fa fa-user"></i></label></td>
+                            <td><input id="name" type="text" class="name" name="name" required placeholder="Vui lòng nhập vào họ tên của bạn" ></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="email"><i class="icon_lh fa fa-envelope"></i></label></td>
+                            <td><input id="email" type="text" name="email" required placeholder="Vui lòng nhập vào email của bạn"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="email"><i class="icon_lh fa fa-bars"></i></label></td>
+                            <td>
+                                <select name="" id="" size="1">
+                                    <option value="">Về Sản Phẩm/ Dịch Vụ</option>
+                                    <option value="">Về Ưu Đãi Thành Viên</option>
+                                    <option value="">Về Tin Tuyển Dụng</option>
+                                </select>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td ><i class="icon_lh fa fa-sticky-note"></i></td>
+                            <td >
+                                <textarea name="content" id="" cols="50" rows="7" placeholder="Nội dung cần liên hệ"></textarea>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="submit" type="submit" name="" id="" value="Gửi">
+                            </td>
+                        </tr>
+                    </table>
+            </form>
+            </div>
+            
+            
+		</article>
+	</main>
+	<div class="footer">
+		<footer>
+			<div class="copy_right">
+				<p>&copy 2021 Bản quyền thuộc về FreeezeVN. </p>
+				<a href=""> <i class="fa fa-facebook icon_footer"></i></a>
+				<a href=""> <i class="fa fa-twitter icon_footer"></i></a>
+				<a href=""> <i class="fa fa-pinterest icon_footer"></i></a>
+				<a href="#logo" class="back_top">
+					<img src="./top.png" alt="">
+				</a>
+			</div>
+			
+		</footer>
+		
+	</div>
+    <script src="./js/bt.js"></script>
+</body>
+</html>
