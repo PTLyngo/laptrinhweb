@@ -73,8 +73,9 @@
 		.giohang{
 			margin-top: 19px;
 			float: right;
-
+			
 		}
+	
 	</style>
 </head>
 <body id="body">
@@ -91,7 +92,7 @@
 				<div >
 					<div class="sub">
 						<nav class="nav-grid">
-							<a href="trangchu.html">Trang chủ</a>
+							<a href="index.html">Trang chủ</a>
 							<a href="gioithieu.html">Giới thiệu</a>
 							<a href="sanpham.html">Sản phẩm</a>
 							<a href="tintuc.html">Tin tức</a>
@@ -101,11 +102,11 @@
 						</nav>
 					</div>
 
-					<form action="timkiem.html" method="get" class="icon" id="frm-search" onsubmit="return search(this);">
+					<form action="timkiem.html" method="get" class="icon" id="frm-search"onsubmit="return search(this);">
 						<input name="words" type="text" id="input-search" placeholder="Nhập nội dung cần tìm">
-						<button type="submit"><a href="#" id="icon-search"></a><i class=" icon_search fa fa-search"></i></button>
+						<button  type="submit"><a href="#" id="icon-search"></a><i class=" icon_search fa fa-search"></i></button>
 					</form>
-					<button class="giohang" onclick="return window.location.href='donhang.html'"><i class="icon_shopping_cart fa fa-shopping-cart"></i></button>
+					<button class="giohang"onclick="return window.location.href='donhang.html'"><i class="icon_shopping_cart fa fa-shopping-cart"></i></button>
 
 				</div>
 			</div>
@@ -115,7 +116,7 @@
 		<article>
 			<h1><b class="header">ĐĂNG KÝ</b></h1>
 			<div class="form">
-				<form id="formDK" onsubmit="return validateDK(this)" action="" method="post" enctype="multipart/form-data">
+				<form id="formDK"onsubmit="return validateDK(this)" action="" method="post" enctype="multipart/form-data">
 					<table  >
 						<tr>
 							<td><label for="email"><i class=" icon_dk fa fa-envelope"></i></label></td>

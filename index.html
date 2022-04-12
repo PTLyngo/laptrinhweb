@@ -6,7 +6,7 @@
 	<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="./images/favicon.ico" >
 	<link rel="stylesheet" href="./rule.css">
 	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
-	
+	<link rel="stylesheet" href="./bt2-jquery.css">
 
 	<style>
 		article h1{
@@ -108,17 +108,88 @@
 		.step img{
 			width: 40%;
 		}
+
 		.icon{
 			float: none;
-			margin-left: 112px;
+			margin-left: 145px;
 		}
 
 		.giohang{
 			margin-top: 19px;
 			float: right;
+		}
 
+		#headline {
+			position: relative;
+			margin: 0 auto;
+			padding: 10px;
+			width: 1035px;
+			height: 300px;
+		}	
+
+		#headline div {
+			position: relative;
+			margin: 0 auto;
+		}
+
+		#headline div img {
+			margin: 0 auto;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+		}
+
+		#headline div span {
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
+			padding: 0 5px;
+			border: 1px solid red;
+			border-radius: 3px;
+			background-color: white;
+			z-index: 10;
+		}
+
+		.img-content{
+			width: 100%;
 		}
 	</style>
+	<script src="./jquery-3.6.0.min.js"></script>
+	<script src="./js/bt2-jquery.js"></script>
+	<script >
+		$(document).ready(function () {
+    	var headlineContent=[
+        {
+            "title":"Bánh flan sữa chua - sự kết hợp hoàn hảo",
+            "photo":"images/trangchu/headline/headline1.jpg"
+        },
+        {
+            "title":"Sữa chua làm từ sữa dê - đậm đà hương vị khó quên",
+            "photo":"images/trangchu/headline/headline2.jpg"
+        },
+        {
+            "title":"Thưởng thức sữa chua theo cách của bạn",
+            "photo":"images/trangchu/headline/headline3.jpg"
+        }
+    ];
+	for (var i = 0; i < headlineContent.length; i++) {
+      var item = headlineContent[i];
+      var divcontent = $("<div></div>");
+      $("<span><h3>" + item.title + "</h3></span>").appendTo(divcontent) + $("<img src=\"" + item.photo + "\"/>").appendTo(divcontent);
+      $("#headline").append(divcontent);
+      if(i > 0) divcontent.hide();
+    }
+	
+  
+    setInterval(function () {
+      $("#headline > div:first")
+        .hide()
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo("#headline");
+    }, 5000);
+    
+});
+	</script>
 </head>
 <body id="body">
 	<div class="div_header">
@@ -134,7 +205,7 @@
 				<div >
 					<div class="sub">
 						<nav class="nav-grid">
-							<a href="trangchu.html">Trang chủ</a>
+							<a href="index.html">Trang chủ</a>
 							<a href="gioithieu.html">Giới thiệu</a>
 							<a href="sanpham.html">Sản phẩm</a>
 							<a href="tintuc.html">Tin tức</a>
@@ -144,19 +215,20 @@
 						</nav>
 					</div>
 
-					<form action="timkiem.html" method="get" class="icon" id="frm-search" onsubmit="return search(this);">
+					<form action="timkiem.html" method="get" class="icon" id="frm-search"onsubmit="return search(this);">
 						<input name="words" type="text" id="input-search" placeholder="Nhập nội dung cần tìm">
 						<button type="submit"><a href="#" id="icon-search"></a><i class=" icon_search fa fa-search"></i></button>
 					</form>
-					<button class="giohang" onclick="return window.location.href='donhang.html'"><i class="icon_shopping_cart fa fa-shopping-cart"></i></button>
-</div>
+					<button class="giohang"onclick="return window.location.href='donhang.html'"><i class="icon_shopping_cart fa fa-shopping-cart"></i></button>
+				</div>
 			</div>
 		</header>	
 	</div>
 
 	<main class="main_grid main_cot">
 		<article class="article_grid">
-			<img src="./images/trangchu/bg-home.jpg" alt="">
+			<div id="headline"></div>
+			<img class="img-content" src="./images/trangchu/bg-home.jpg"  alt="">
 			<h1>Sản phẩm mới</h1>
 				<h2>Sữa chua tốt cho sức khoẻ</h2>
 				<div class="hinh_text">
